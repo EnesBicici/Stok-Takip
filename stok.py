@@ -34,6 +34,7 @@ class Stok:
 
     def sil(self):
         Veritabani.query('delete from stok where id=?',(self.id,))
+        Veritabani.query('delete from hareketler where stokid = ?', (self.id,))
 
 class Urun:
     def __init__(self,urunid, ad, aciklama, fotograf):
